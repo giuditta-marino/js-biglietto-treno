@@ -23,10 +23,10 @@ if (isNaN(numeroChilometri) || isNaN(etaPasseggero)){
   alert("L'età che hai inserito non è valida. Inserisci valori compresi tra 0 e 120");
 } else {
     if (etaPasseggero < 18) {
-      document.getElementById("prezzofinale").innerHTML= parseFloat(prezzoBase - sconto20).toFixed(2) + " euro (scontato del 20%).";
+      document.getElementById("prezzofinale").innerHTML= Math.round((prezzoBase - sconto20) * 100) / 100 + " euro (scontato del 20%).";
     } else if (etaPasseggero > 65) {
-        document.getElementById("prezzofinale").innerHTML= parseFloat(prezzoBase - sconto40).toFixed(2) + " euro (scontato del 40%).";
+      document.getElementById("prezzofinale").innerHTML= Math.round((prezzoBase - sconto40) * 100) / 100 + " euro (scontato del 40%).";
     } else {
-      document.getElementById("prezzofinale").innerHTML= parseFloat(prezzoBase).toFixed(2) + " euro.";
+      document.getElementById("prezzofinale").innerHTML= Math.round(prezzoBase * 100) / 100 + " euro.";
     }
   }
